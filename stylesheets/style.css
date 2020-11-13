@@ -1,0 +1,47 @@
+body{
+    margin : 0px;
+    background-color: #ffdfdf;
+    font-family: 'Cinzel Decorative', cursive;
+}
+a{
+    color: #D5A021;
+}
+
+/* HEADER SECTION */
+.navbar-custom-header{
+    background-color: #233567;
+}
+.logo{
+    max-height: 180px;
+    max-width: 180px;
+    margin : 0 2.5rem;
+}
+.btn-custom-header{
+        background-color: #D5A021;
+        border-color: #D5A021;
+        outline-color: #D5A021;
+}
+
+
+/* SUBHEADER SECTION */
+.navbar-custom-subheader{
+    background-color: #315b96;
+}
+.options{
+    padding-left  : 10rem;
+}
+.nav-item{
+    padding: 0.5rem;
+}
+
+
+
+/* LOGIN - SIGNUP PAGE */
+.bk-img{
+    filter: blur(2px);
+    max-width: 100%;
+    max-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
