@@ -10,6 +10,7 @@
         <!-- CSS LINKS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/login-signup.css">
             
             
         <!-- GOOGLE FONTS -->
@@ -48,7 +49,7 @@
         <div class="options collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" href="pages/match_sch.php">Buy Tickets</a>
+                    <a class="nav-link" href="match-sch.php">Buy Tickets</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Page2</a>
