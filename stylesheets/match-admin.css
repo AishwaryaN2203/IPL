@@ -1,0 +1,27 @@
+
+.match-heading{
+    font-family: 'Alegreya Sans', sans-serif;
+    padding: 2.5%;
+    text-align:center;
+}
+.row{
+    margin-left:10px;
+    margin-right:10px;
+}
+.cards-col{
+    padding:2% 1%;
+}
+.card-photo{
+    width:200px;
+    height:200px;
+    object-fit:cover;
+}
+.card-title {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.date-class{
+    margin: auto;
+    padding: 10px;
+}
+

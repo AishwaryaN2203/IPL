@@ -2,6 +2,7 @@ body{
     margin : 0px;
     background-color: #ffdfdf;
     font-family: 'Cinzel Decorative', cursive;
+    text-transform: none !important;
 }
 a{
     color: #D5A021;
@@ -17,10 +18,11 @@ a{
     margin : 0 2.5rem;
 }
 .btn-custom-header{
-        background-color: #D5A021;
-        border-color: #D5A021;
-        outline-color: #D5A021;
+    background-color: #D5A021;
+    border-color: #D5A021;
+    outline-color: #D5A021;
 }
+
 
 
 /* SUBHEADER SECTION */
@@ -34,14 +36,12 @@ a{
     padding: 0.5rem;
 }
 
+/* FOOTER */
+.section{
+    background-color: #315b96;
+    padding: 2.5rem;
+}
 
-
-/* LOGIN - SIGNUP PAGE */
-.bk-img{
-    filter: blur(2px);
-    max-width: 100%;
-    max-height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.footer-text{
+    text-align: center;
 }
