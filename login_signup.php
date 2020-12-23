@@ -1,9 +1,7 @@
 <?php
-
-
+ session_start();
 // Include configuration file
 include_once 'configuration/db-configuration.php';
-
 
 // Define variables and initialize with empty values
 $email2 = $password2 = $confirm_password = "";
@@ -34,6 +32,7 @@ if(isset($_POST['btn2'])){
     $user_already_exists = "SELECT * FROM sign_up WHERE email_id ='$email2' LIMIT 1";
     $result = mysqli_query($conn,$user_already_exists);
     $user = mysqli_fetch_assoc($result);
+    mysqli_free_result($result);
  
     if($user)
         $email_err2 = "Email already Exists";
@@ -45,9 +44,7 @@ if(isset($_POST['btn2'])){
         $query = "INSERT INTO sign_up (email_id,password,confirm_password) VALUES ('$email2','$password2','$confirm_password')";
 
         if(mysqli_query($conn,$query)){
-            //echo "Hello";
             header('location:login-user.php');
-            
         }
         else
             echo "Query Error";
@@ -65,13 +62,16 @@ if(isset($_POST["btn1"])){
 
         if(empty($email_err1) && empty($password_err1)){
            // $password1 = md5($password1);
-            $query = "SELECT * FROM sign_up WHERE email_id ='$email1' AND password='$password1' ";
+            $query = "SELECT user_id FROM sign_up WHERE email_id ='$email1' AND password='$password1' ";
             $results = mysqli_query($conn,$query);
+            $q = mysqli_fetch_all($results);
 
             if(mysqli_num_rows($results) == 1){
-                $_SESSION['email']='email';
+                
+                $_SESSION['email']=$email1;
+                $_SESSION['userId'] = $q[0][0];
                 $_SESSION['success'] = "You are now logged in";
-                    echo "hi";
+
                 if($email1 == 'ADMINIPL@GMAIL.COM'){
                     header('location:match-admin.php');
                 }
@@ -89,6 +89,7 @@ if(isset($_POST["btn1"])){
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <?php include('templates/header.php') ?>
+<?php include('templates/header-ls.php')?>
 
     <div class="ls-container">
         <div class="form-bx">
