@@ -1,23 +1,16 @@
 <!-- Subheader Section -->
 <div class="subHeader">
-    <nav class="navbar navbar-custom-subheader navbar-expand-lg ">        
-        <div class="options collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item ">
-                    <a class="nav-link" href="match-admin.php">Add Match</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Update Match Details </a>
-                </li>
-                <!--<li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                </li>-->
-            </ul>
-        </div>
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="options navbar navbar-custom-subheader navbar-expand-lg ">
+        <a class="navbar-brand" href="match-admin.php">Add Matches</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="update-match.php">Update match details</a></li>
+                <!--<li class="nav-item"><a class="nav-link" href="#">Disabled</a></li>-->
+            </ul>
+        </div>
     </nav>
 </div>    
 

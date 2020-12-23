@@ -12,11 +12,10 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/login-signup.css">
     <link rel="stylesheet" href="stylesheets/match-admin.css">
-            
+    <link rel="stylesheet" href="stylesheets/all-info.css"> 
             
         <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&family=Cinzel+Decorative&family=Josefin+Sans:ital,wght@1,200&display=swap" rel="stylesheet">
+    
     
    
     <!-- Favicon -->
@@ -33,11 +32,4 @@
 
 <body>
 
-<!-- Header Section -->
-<div class="header">
-    <nav class="navbar navbar-custom-header navbar-expand-lg ">
-        <a class="navbar-brand" href="#"><img class="logo" src="images/main_logo.png" alt=""></a>               
-        <a class="header-btn" href="login_signup.php">Login/Signup</a>
-    </nav> 
-</div>
 

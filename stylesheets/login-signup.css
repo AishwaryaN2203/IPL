@@ -41,7 +41,7 @@
     position:absolute;
     width: 115px;
     height: 100%;
-    background: linear-gradient(to right, #ff105f, #ffad06);
+    background: linear-gradient(to right,  #fbc1bc, #ffad06);
     border-radius: 30px;
     transition: .5s;
 }
@@ -71,7 +71,7 @@
     cursor: pointer;
     display: block;
     margin: 45px;
-    background: linear-gradient(to right, #ff105f, #ffad06);
+    background: linear-gradient(to right, #fbc1bc, #ffad06);
     border:0;
     outline: none;
     border-radius: 30px;

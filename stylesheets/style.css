@@ -1,8 +1,6 @@
 body{
     margin : 0px;
     background-color: #ffdfdf;
-    font-family: 'Cinzel Decorative', cursive;
-    text-transform: none !important;
 }
 a{
     color: #D5A021;
@@ -22,7 +20,16 @@ a{
     border-color: #D5A021;
     outline-color: #D5A021;
 }
-
+a:hover{
+    color: black;
+}
+.right {
+    position: absolute;
+    right: 50px;
+    width: 250px;
+    padding: 10px;
+  }
+  
 
 
 /* SUBHEADER SECTION */
@@ -35,13 +42,18 @@ a{
 .nav-item{
     padding: 0.5rem;
 }
+.navbar-toggler-icon{
+    color: black;
+}
 
 /* FOOTER */
 .section{
     background-color: #315b96;
     padding: 2.5rem;
+    align-self: center;
 }
-
-.footer-text{
+.center{
     text-align: center;
 }
+
+
