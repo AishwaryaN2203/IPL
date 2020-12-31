@@ -14,8 +14,8 @@ mysqli_free_result($ground_result);
 mysqli_free_result($team_result);
 
  // Initializing the values 
-$selected_stadium = $selected_team1 = $selected_team2 = $date =  "";
-$stadium_err = $team1_err = $team2_err = $team_selected_err = $date_err = "";
+$selected_stadium = $selected_team1 = $selected_team2 = $date = $time =  "";
+$stadium_err = $team1_err = $team2_err = $team_selected_err = $date_err = $time_err = "";
 
 if(isset($_POST['insert'])){
     $date = $_POST['date'];
@@ -56,9 +56,25 @@ if(isset($_POST['insert'])){
 
     if($selected_team1===$selected_team2)
         $team_selected_err = "Team 1 and Team2 are the same ";
+    
+    if(isset($_POST['options'])){
+        if($_POST['options']=='1')
+                $time = '7:30';
+        elseif($_POST['options']=='2')
+                $time = '3:30';
+    }
+    if(empty($time))
+        $time_err = "Enter the timings";
 
-    if(empty($stadium_err) & empty($team1_err) & empty($team2_err) & empty($date_err)){
-        $query = "INSERT INTO schedule_table (team1,team2,date,stadium) VALUES ('$selected_team1','$selected_team2','$date','$selected_stadium')";	
+    if(empty($stadium_err) & empty($team1_err) & empty($team2_err) & empty($date_err) & empty($time_err)){
+        
+        $query = "SELECT available_seat,per_ticket_cost FROM stadium_table WHERE stadium_id=$selected_stadium";
+        $result  = mysqli_query($conn,$query);
+        $mat = mysqli_fetch_all($result);
+        $seats = $mat[0][0];
+        $cost = $mat[0][1];
+        $query = "INSERT INTO schedule_table (team1,team2,date,stadium,timing,seats,cost) VALUES ('$selected_team1','$selected_team2','$date','$selected_stadium','$time','$seats','$cost')";	
+        
         if(mysqli_query($conn,$query)){
             //echo "Hello";
             header('location:match-admin.php');   
@@ -147,14 +163,9 @@ if(isset($_POST['insert'])){
             <div class="red-text"><?php echo $date_err?></div>
             <br>
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="option1" autocomplete="off" checked>  07 : 30 pm 
-                </label>
-                <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="option2" autocomplete="off"> 03 : 30 pm
-                </label>
+                <label class="btn btn-secondary"><input type="radio" name="options" value="1" id="option1" autocomplete="off" checked>  07 : 30 pm </label>
+                <label class="btn btn-secondary"><input type="radio" name="options" value="2" id="option2" autocomplete="off"> 03 : 30 pm</label>
             </div>
-
         </div>
         
         <button type="submit" name="insert"> INSERT MATCH DETAILS</button>   

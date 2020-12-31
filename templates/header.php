@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/login-signup.css">
     <link rel="stylesheet" href="stylesheets/match-admin.css">
-    <link rel="stylesheet" href="stylesheets/all-info.css"> 
+    <link rel="stylesheet" href="stylesheets/all-info.css">
+     
             
         <!-- GOOGLE FONTS -->
     

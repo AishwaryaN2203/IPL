@@ -44,7 +44,7 @@ if(isset($_POST['btn2'])){
         $query = "INSERT INTO sign_up (email_id,password,confirm_password) VALUES ('$email2','$password2','$confirm_password')";
 
         if(mysqli_query($conn,$query)){
-            header('location:login-user.php');
+            header('location:login_signup.php');
         }
         else
             echo "Query Error";

@@ -1,14 +1,18 @@
 <?php
-$sql_drop = 'DROP TRIGGER IF EXISTS quote';
-$result = mysqli_query($c,$sql_drop);
 
-$sql = "  CREATE TRIGGER quote
-            BEFORE  INSERT ON price
-            for each ROW
-            BEGIN 
-                IF new.price_value THEN SET new.price_value = 1000;
-            END
-       ";
-$result = mysqli_query($c,$sql) or die('no'); 
+$drop_query = "DROP TRIGGER IF EXISTS change_finished";
+$result = mysqli_query($conn,$drop_query) or die('no');
+
+$sql = "CREATE TRIGGER change_finished
+        AFTER UPDATE ON schedule_table
+        FOR EACH ROW
+        BEGIN 
+                IF Old.seats = 0  THEN 
+                echo 'hi';
+                END IF;
+        END";
+
+if (!($conn->query($sql) === TRUE) )
+            echo "Error updating record: " . $conn->error;
 
 ?>

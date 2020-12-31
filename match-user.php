@@ -2,6 +2,8 @@
 session_start();
 include('configuration/db-configuration.php');
 
+
+
 $sql = "SELECT match_id,team1,team2,stadium_name,stadium_city,date FROM schedule_table,stadium_table WHERE stadium_id=stadium AND finished=1 ";
 $result  = mysqli_query($conn,$sql);
 $upmatch = mysqli_fetch_all($result,MYSQLI_ASSOC);
@@ -12,14 +14,18 @@ $result  = mysqli_query($conn,$sql);
 $fnmatch = mysqli_fetch_all($result,MYSQLI_ASSOC);
 mysqli_free_result($result);
 
-$sql = 'SELECT team_name,name FROM team_table';
-$result = mysqli_query($conn,$sql);
-$team_details = mysqli_fetch_all($result,MYSQLI_ASSOC);
-mysqli_free_result($result);
-
 $err = "";
-if(isset($_POST['insert'])){
 
+
+if(isset($_POST['insert'])){
+    foreach($upmatch as $um):
+        $mno = $um['match_id'];
+        $date = $um['date'];
+        if(date('Y-m-d')>=$date):
+            if (!($conn->query("UPDATE schedule_table SET finished = 0 WHERE match_id = $mno") === TRUE) )
+                echo "Error updating record: " . $conn->error;   
+        endif; 
+    endforeach;
     if(isset($_POST['upcomming'])){
         foreach($upmatch as $um):
             $var =  $um["match_id"];
@@ -54,10 +60,17 @@ if(isset($_POST['insert'])){
                 <div class="cards-col col-lg-3 col-md-6 d-flex align-items-stretch mb-3" style="height: 18rem;" >
                     <input type="radio" value="<?php echo htmlspecialchars($um['match_id']);?>" name="upcomming">
                     <label for="upcomming">
+                    <?php
+                        $t1 = $um['team1'];
+                        $t2 = $um['team2'];
+                        $sql = "SELECT name FROM team_table WHERE team_id = $t1 OR team_id = $t2";
+                        $result = mysqli_query($conn,$sql);
+                        $team_details = mysqli_fetch_all($result);                   
+                    ?>
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Match No: <?php echo htmlspecialchars($um['match_id']); ?></h5>
-                            <h5 class="card-title"><?php echo htmlspecialchars($um['team1']); ?> v/s <?php echo htmlspecialchars($um['team2']); ?></h5>
+                            <h5 class="card-title"><?php echo htmlspecialchars( $team_details[0][0]); ?> v/s <?php echo htmlspecialchars( $team_details[1][0]); ?></h5>
                             <h5 class="card-title"><?php echo htmlspecialchars($um['stadium_name']); ?></h5>
                             <h6 class="card-subtitle mb-2 text-muted"><?php echo htmlspecialchars($um['stadium_city']); ?></h6>
                             <h5 class="card-title">Date: <?php echo htmlspecialchars($um['date']); ?></h5>
@@ -75,11 +88,17 @@ if(isset($_POST['insert'])){
         <div class="row">
             <?php  foreach($fnmatch as $fm): ?>
                 <div class="cards-col col-lg-3 col-md-6">
+                    <?php
+                        $t1 = $fm['team1'];
+                        $t2 = $fm['team2'];
+                        $sql = "SELECT name FROM team_table WHERE team_id = $t1 OR team_id = $t2";
+                        $result = mysqli_query($conn,$sql);
+                        $team_details = mysqli_fetch_all($result);                   
+                    ?>
                     <div class="card">
                         <div class="card-body">
-                        <h5 class="card-title"><?php echo htmlspecialchars($fm['match_id']); ?></h5>
-                        <h5 class="card-title"><?php echo htmlspecialchars($fm['team1']); ?></h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo htmlspecialchars($fm['team2']); ?></h6>
+                        <h5 class="card-title">Match No:<?php echo htmlspecialchars($fm['match_id']); ?></h5>
+                        <h5 class="card-title"><?php echo htmlspecialchars( $team_details[0][0]); ?> v/s <?php echo htmlspecialchars( $team_details[1][0]); ?></h5>
                         <h5 class="card-title"><?php echo htmlspecialchars($fm['stadium_name']); ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted"><?php echo htmlspecialchars($fm['stadium_city']); ?></h6>
                         <h5 class="card-title"><?php echo htmlspecialchars($fm['date']); ?></h5>

@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: whitesmoke;
+}
+
+body{
+    background-color: #3c3c3c;
+}
+.container{
+    position: relative;
+
+}
+
+.container .background img{
+    position: absolute;
+    width: 450px;
+    margin-left: 2%;
+    height: 90vh;
+    opacity: 0.4;
+}
+
+.container .heading{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 35%;
+    min-height: 65vh;
+    
+}
+.container .heading h1{
+    padding-bottom: 15px;
+    font-size: 31px;
+    font-family:  'Cinzel decorative';
+    font-weight: 900;
+
+}
+.container .heading p{
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: 800;
+    font-family: 'Alegreya',cursive;
+}
+
+.container .heading button1{
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    background-color:#4F91CD;
+    padding: 3%; 
+    cursor: pointer;
+    border: 2px  solid transparent;  
+    font-family: 'Alegreya',cursive; 
+}
+
+.container .image img{
+    margin-left: 50%;
+    width: 700px;
+    height: 400px;
+/* for image reflection */
+
+-webkit-box-reflect: below 2px linear-gradient(transparent, transparent, rgba(0,0,0,0.4));
+}
+
+.empty{
+    position: absolute;
+    clip-path: polygon(77% 0, 100% 0, 100% 100%, 15% 116%);
+    background-color:#4F91CD;
+    width: 115.5%;
+    height: 100vh;
+    top: 0;
+    right: 1000;
+    z-index: -1000;
+}
+
+
+.list ol{
+    display: flex;
+    position: absolute;
+    list-style: none;
+    margin-left: 30%;
+    margin-top: 2%;
+}
+.list ol li{
+    margin: 30px;
+    font-size: 25px;
+    font-weight: 900;
+    cursor: pointer;
+    font-family:  'Cinzel decorative';
+}
+
+.list ol li:hover, .container .navbar ul li:hover{
+    transform: scale(1, 1.5);
+}
+
+
+@media screen and (max-width: 1500px){
+    .container .image img{
+
+        width: 600px;
+        height: 400px;
+        margin-right: 30%;
+    }
+    .list ol li{
+        margin: 10px;
+        margin-right: 10%;
+    }
+}
+@media screen and (max-width: 1300px){
+    .container .image img{
+        width: 500px;
+        height: 450px;
+
+    }
+    .list ol li{
+         margin: 15px;
+         font-size: 20px;
+    }
+    
+}
+@media screen and (max-width: 1100px){
+    
+    .container .image img{
+        width: 400px;
+    }
+    .container .background img{
+
+        width: 350px;
+        margin-right: 35%;
+        height: 70vh;
+        z-index: -1;
+        opacity: 0.4;
+    }
+    .container .heading h1{
+        padding-top: 25px;
+        font-size: 23px;
+    }
+    .container .heading p{
+        padding-top: 5%;
+    }
+
+}
+
+@media screen and (max-width: 750px){
+    .container .heading{
+        top: 120vh;
+        width: 100%;
+        margin: 0;
+    }
+
+    .container .image img{
+        margin: 0;
+        margin-right: 10%;
+        margin-top: -30px;
+        width: 460px;
+        height: 400px;
+    }
+
+    .container .background img{
+        position: absolute;
+        width: 450px;
+        margin-right: 15%;
+        height: 80vh;
+        top: 100vh;
+        z-index: -1;
+        opacity: 0.4;
+    }
+    
+    .list ol{
+        display: flex;
+        position: absolute;
+        list-style: none;
+margin-top: 5%;
+
+    }
+    .list ol li{
+        margin: 8px;
+        font-size: 15px;
+        font-weight: 1000;
+        margin-right: 1%;
+        color: whitesmoke;
+    }
+
+   
+    .container .heading p{
+        font-size: 15px;
+        font-weight: 900;
+        width: 95%;
+    }
+    .container .heading button1{
+        padding: 1%;
+        width: 30%;
+    }
+}

@@ -6,8 +6,8 @@
     $a=mysqli_fetch_all($result);  
     mysqli_free_result($result);
     
-    $team1 = $a[0][4];
-    $team2 = $a[0][5];
+    $team1 = $a[0][3];
+    $team2 = $a[0][4];
     $sql = "SELECT team_name FROM team_table WHERE team_id = $team1 OR team_id = $team2 ";
     $result=mysqli_query($conn, $sql);
     $b=mysqli_fetch_all($result);
@@ -29,9 +29,8 @@
 						<h5 class="card-title">Ticket No: <?php echo htmlspecialchars($t_no); ?></h5>
 						<h5 class="card-title">Match No: <?php echo htmlspecialchars($a[0][0]); ?></h5>
                         <h5 class="card-title">Match:<?php echo htmlspecialchars($b[0][0]); ?> v/s <?php echo htmlspecialchars($b[1][0]); ?></h5>
-                        <h5 class="card-title">Gate:<?php echo htmlspecialchars($a[0][1]); ?> </h5>
-                        <h5 class="card-title">No of Seats:<?php echo htmlspecialchars($a[0][2]); ?></h5>
-                        <h5 class="card-title">Amount:<?php echo htmlspecialchars($a[0][3]); ?></h5>
+                        <h5 class="card-title">No of Seats:<?php echo htmlspecialchars($a[0][1]); ?></h5>
+                        <h5 class="card-title">Amount:<?php echo htmlspecialchars($a[0][2]); ?></h5>
                         </div>
 
                     </div>
