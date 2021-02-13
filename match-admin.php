@@ -94,6 +94,7 @@ if(isset($_POST['insert'])){
 <?php include('templates/header.php') ?>
 <?php include('templates/header-logout.php')?>
 <?php include('templates/admin-header.php')?>
+<link rel="stylesheet" href="stylesheets/match-admin.css">
 
 <div class="add-match">
 
@@ -107,7 +108,7 @@ if(isset($_POST['insert'])){
                <div class="card">
                     <input type="radio" value="stad-<?php echo htmlspecialchars($std['stadium_id']);?>" name="ground"> 
                     <label for="ground">
-                    <img src="images/ground/<?php echo htmlspecialchars($std['stadium_id']);?>.jpg" alt="" class="card-photo" align="left"> 
+                    <img src="images/ground/<?php echo htmlspecialchars($std['stadium_id']);?>.jpg" alt="" class="card-photo"> 
                     <div class="card-body">
                         <h5 class="card-title"><?php echo htmlspecialchars($std['stadium_name']); ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted"><?php echo htmlspecialchars($std['stadium_city']); ?></h6>
@@ -126,7 +127,7 @@ if(isset($_POST['insert'])){
                     <div class="card">
                         <input type="radio" value="t1-<?php echo htmlspecialchars($t['team_id']);?>" name="1team">
                         <label for="1team">
-                        <img src="images/team/<?php echo htmlspecialchars($t['team_id']);?>.png" alt="" class="card-photo" align="left">
+                        <img src="images/team/<?php echo htmlspecialchars($t['team_id']);?>.png" alt="" class="card-photo">
                         <div class="card-body">
                         <h5 class="card-title"><?php echo htmlspecialchars($t['team_name']); ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted"><?php echo htmlspecialchars($t['name']); ?></h6></div>
@@ -144,7 +145,7 @@ if(isset($_POST['insert'])){
                     <div class="card">
                         <input type="radio" value="t2-<?php echo htmlspecialchars($t['team_id']);?>" name='2team'> 
                         <label for="2team">
-                        <img src="images/team/<?php echo htmlspecialchars($t['team_id']);?>.png" alt="" class="card-photo" align="left">
+                        <img src="images/team/<?php echo htmlspecialchars($t['team_id']);?>.png" alt="" class="card-photo" >
                         <div class="card-body">
                         <h5 class="card-title"><?php echo htmlspecialchars($t['team_name']); ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted"><?php echo htmlspecialchars($t['name']); ?></h6></div>

@@ -1,14 +1,21 @@
 body{
     margin : 0px;
     background-color: #ffdfdf;
+    color: #000;
+    
 }
 a{
-    color: #D5A021;
+   
+    font-size: 20px;
+    font-weight: 700;
+    color: whitesmoke;
+    font-family:  'Cinzel decorative';
 }
 
 /* HEADER SECTION */
 .navbar-custom-header{
     background-color: #233567;
+    
 }
 .logo{
     max-height: 180px;
@@ -19,6 +26,8 @@ a{
     background-color: #D5A021;
     border-color: #D5A021;
     outline-color: #D5A021;
+
+
 }
 a:hover{
     color: black;
@@ -42,18 +51,19 @@ a:hover{
 .nav-item{
     padding: 0.5rem;
 }
-.navbar-toggler-icon{
-    color: black;
-}
 
 /* FOOTER */
 .section{
     background-color: #315b96;
     padding: 2.5rem;
     align-self: center;
+    align-items: center;
 }
 .center{
+    align-items: center;
     text-align: center;
+    color: whitesmoke;
+    font-family:  'Cinzel decorative';
+    font-size: 20px;
+    font-weight: 700;
 }
-
-

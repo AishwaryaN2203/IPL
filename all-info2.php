@@ -67,7 +67,7 @@ else if(isset($_POST['submit3'])){
 <?php include('templates/header.php') ?>
 <?php include('templates/header-logout.php') ?>
 <?php include('templates/user-header.php')?>
-<link rel="stylesheet" href="stylesheets/all2.css">
+<link rel="stylesheet" href="stylesheets/all-info2.css">
 
 
 <div class="center">

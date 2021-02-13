@@ -20,7 +20,7 @@
 <?php include('templates/header.php') ?>
 <?php include('templates/header-logout.php') ?>
 <?php include('templates/user-header.php')?>
-
+<link rel="stylesheet" href="stylesheets/ticket.css">
 <h1 style="text-align:center" >BOOKINGS </h1>
         <div class="row">
                 <div class="cards-col mx-auto">

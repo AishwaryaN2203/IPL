@@ -3,6 +3,7 @@ session_start();
 
 include('configuration/db-configuration.php');
 include('imp/function.php');
+include('imp/trigger.php');
 
 $match_no = $_SESSION['selected_match_id'];
 $sql = "SELECT * FROM schedule_table WHERE match_id = $match_no ";
@@ -73,8 +74,7 @@ if(isset($_POST["submit"])){
     {
         if (!($conn->query("UPDATE schedule_table SET seats = seats - $seat_req WHERE match_id = $match_no") === TRUE) )
             echo "Error updating record: " . $conn->error;
-        if (!($conn->query("UPDATE schedule_table SET finished = 0 WHERE match_id = $match_no AND seats = 0 ") === TRUE) )
-            echo "Error updating record: " . $conn->error;    
+  
          
         $amt = $match_info[0][8];  
         $total_amt = $seat_req * $amt;
@@ -99,34 +99,32 @@ if(isset($_POST["submit"])){
 
 
 <!doctype html>
-<link rel="stylesheet" href="stylesheets/reserve.css" >
-
 <html lang="en" >
 
 <?php include('templates/header.php') ?>
 <?php include('templates/header-logout.php') ?>
 <?php include('templates/user-header.php')?>
- 
+<link rel="stylesheet" href="stylesheets/reserve.css" >
   <div class="res">
-    <form method="POST" >
-             <div class="title">Booking Details</div>
-
+    <form action="" method="POST" >
+            <div class="title">Booking Details</div>
+            <div class="form">
             <div class="input_field">
                 <label>User_id : </label>
-                <input type="text" disabled  value="<?php echo htmlspecialchars($email)?>"><br><br>      
+                <input type="text" disabled  value="<?php echo htmlspecialchars($email)?>" style="color: black;">      
             </div>
 
             <div class="input_field">
                 <label>Match_id : </label>
-                <input type="text" disabled  value="<?php echo htmlspecialchars($match_no)?>"><br><br>   
+                <input type="text" disabled  value="<?php echo htmlspecialchars($match_no)?>" style="color: black;"> 
             </div>
 
             <div class="input_field">
-                <label>Match : </label>
-                <input type="text" disabled  value="<?php echo htmlspecialchars($team1)?>">      
+                <label>Match:</label>
+                <input type="text" disabled  value="<?php echo htmlspecialchars($team1)?>" style="color: black;" size="2">      
                 VS                   
-                <input type="text" disabled  value="<?php echo htmlspecialchars($team2)?>"> 
-            </div><br> <br> 
+                <input type="text" disabled  value="<?php echo htmlspecialchars($team2)?>" style="color: black;" size="2"> 
+            </div>
 
             <div class="input_field">
                 <label>First name : </label>
@@ -137,49 +135,45 @@ if(isset($_POST["submit"])){
             <div class="input_field">
                 <label>Last name : </label>
                 <input type="text" name="name2" id="name" value="<?php echo htmlspecialchars($last) ?>" placeholder="Enter Your Last Name">
-                <div class="red-text"><?php echo $last_err ?></div><br> 
+                <div class="red-text"><?php echo $last_err ?></div><br><br>
             </div>
 
             <div class="input_field">
-                <div class="gender">
-                    <label >GENDER:</label><br>
+                    <label >Gender :</label>
                     <input type="radio" name = "gender" value="m" id="male"><label for="male">Male</label>
                     <input type="radio" name = "gender" value="f" id="female"><label for="female">Female</label>
                     <input type="radio" name = "gender" value="o" id="other"><label for="other">Other</label>
-                </div>
                 <div class="red-text"><?php echo $gender_err ?></div>
-            </div>    
-            <br>          
+            </div>            
             
            <div class="input_field">               
                 <label>DOB : </label>
                 <input type="date" name="date" id="name" value="<?php echo htmlspecialchars($dob) ?>">
-                <div class="red-text"><?php echo $dob_err ?></div>
-            </div>  <br> 
+                <div class="red-text"><?php echo $dob_err ?></div><br><br>
+            </div>
             
             <div class="input_field">     
                 <label>Phone number : </label>
-                <input type="number" name="number" id="name" value="<?php echo htmlspecialchars($phno) ?>" placeholder="Enter Your Phone no">
-            </div><br> 
+                <input type="number" name="number" id="name" value="<?php echo htmlspecialchars($phno) ?>" placeholder="Enter Your Phone no"><br><br>
+            </div>
             <div class="red-text"><?php echo $phno_err ?></div>
 
             <div class="input_field">     
-                <div class="payment">
                     <label >PAYMENT MODE:</label><br>
                     <input type="radio" name = "payment" value="c" id="credit"><label for="credit">Credit Card</label>
                     <input type="radio" name = "payment" value="d" id="debit"><label for="debit">Debit Card</label>
-                </div>
-            </div><br> 
+            </div>
             <div class="red-text"><?php echo $payment_err ?></div> 
            
             <div class="input_field">
                 <label>Seats : </label>
-                <input type="number" min='0' max='<?php echo htmlspecialchars($match_info[0][7 ]) ?>' class="input" id="seats" name="seats" placeholder="Enter number of seats">
-            </div><br> 
+                <input type="number" min='0' max='<?php echo htmlspecialchars($match_info[0][7]) ?>' class="input" id="seats" name="seats" placeholder="Enter number of seats">
+            </div> 
 
             <div class="input_field">
                 <input type="submit" value="Confirm" name="submit" class="btn">
-            </div>  <br>          
+            </div> 
+     </div>          
     </form>
 
                     

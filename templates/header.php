@@ -7,15 +7,13 @@
     <meta name="author" content="">
    
 
-        <!-- CSS LINKS -->
+    <!-- CSS LINKS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/style.css">
-    <link rel="stylesheet" href="stylesheets/login-signup.css">
-    <link rel="stylesheet" href="stylesheets/match-admin.css">
-    <link rel="stylesheet" href="stylesheets/all-info.css">
-     
-            
-        <!-- GOOGLE FONTS -->
+    
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&family=Cinzel+Decorative&family=Josefin+Sans:ital,wght@1,200&display=swap" rel="stylesheet">
     
     
    

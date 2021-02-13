@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('configuration/db-configuration.php');
-
+include('imp/trigger.php');
 
 
 $sql = "SELECT match_id,team1,team2,stadium_name,stadium_city,date FROM schedule_table,stadium_table WHERE stadium_id=stadium AND finished=1 ";
@@ -51,7 +51,8 @@ if(isset($_POST['insert'])){
 <?php include('templates/header.php') ?>
 <?php include('templates/header-logout.php')?>
 <?php include('templates/user-header.php')?>
-
+<link rel="stylesheet" href="stylesheets/match-user.css"> 
+<div class="bg-image"></div>
 <h1 class="match-heading">UPCOMING MATCHES </h1>
 
     <form action="" method="post">

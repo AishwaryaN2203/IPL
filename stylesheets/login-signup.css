@@ -1,23 +1,28 @@
+body{
+    background: url(../images/cricket.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
 .ls-container{
     height: 100%;
     width: 100%;
-    background-image:
-    linear-gradient( rgba(0,0,0,0.4),rgba(0,0,0,0.4),url("images/background-login.jpg"));
-    background-position: center;
-    background-size: cover;
-    /*position:absolute;*/
 }
 
 .form-bx{
     position : relative;
-    background: #fff;
+    background: rgba(0,0,0,0.4);
+    color: whitesmoke;
+    font-family:  'Alegreya',cursive;
     margin : 6% auto;
     padding: 5px;
     width: 380px;
     height: 480px;
     overflow:hidden;
 }
-
+::placeholder{
+    color: whitesmoke;
+    font-family:  'Cinzel decorative';
+}
 .button-Bx{
     width: 220px;
     margin: 35px auto;
@@ -27,7 +32,10 @@
 }
 
 .toggle-btn{
+    color: whitesmoke;
     position : relative;
+    font-family:  'Cinzel decorative';
+    font-weight: 700;
     padding: 10px 21px;
     cursor: pointer;
     border:0;
@@ -36,12 +44,13 @@
 }
 
 #ls-btn{
+    
     top:0;
     left:0;
     position:absolute;
     width: 115px;
     height: 100%;
-    background: linear-gradient(to right,  #fbc1bc, #ffad06);
+    background: linear-gradient(to right,  #19388A, #4F91CD);
     border-radius: 30px;
     transition: .5s;
 }
@@ -55,12 +64,15 @@
 
 .input-field{
     width:100%;
+    color: whitesmoke;
+    font-family:  'Alegreya';
+    font-size: larger;
     padding: 10px 0;
     margin: 5px 0;
     border-top: 0;
     border-right:0;
     border-left:0;
-    border-bottom : 1px solid #999;
+    border-bottom : 1px solid ;
     outline: none;
     background: transparent;
 }
@@ -69,9 +81,12 @@
     width:85%;
     padding: 10px 30px; /* top-bottom   left-right */
     cursor: pointer;
+    font-family:  'Cinzel decorative';
+    font-weight: 700;
     display: block;
+    color: whitesmoke;
     margin: 45px;
-    background: linear-gradient(to right, #fbc1bc, #ffad06);
+    background: linear-gradient(to right,#19388A, #4F91CD );
     border:0;
     outline: none;
     border-radius: 30px;

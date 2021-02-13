@@ -1,16 +1,19 @@
 *{
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 body{
-    background: url(../images/background.jpg) no-repeat center fixed;
+	background: url(../images/background.jpg) no-repeat center fixed;
     background-size: cover;
+	font-family: 'Alegreya',cursive;
 }
 .res{
 	max-width: 500px;
 	width: 100%;
 	color:whitesmoke;
 	background-color: rgba(0,0,0,0.5);
+	font-family: 'Alegreya',cursive;
 	margin:20px auto;
 	padding: 30px;
 	box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
@@ -27,6 +30,8 @@ body{
 .res .form{
 	width: 100%;
 }
+
+
 .res .form .input_field{
 	margin-bottom: 15px;
 	display: flex;
@@ -35,16 +40,19 @@ body{
 .res .form .input_field label{
 	width: 200px;
 	color: whitesmoke;
-	margin-right: 5px;
 	font-size: 20px;
 }
 .res .form .input_field .input{
 	width: 100%;
 	outline: none;
 	font-size: 15px;
-	padding: 2px 10px;
+	padding:  6px;
 	border-radius: 3px;
 	transition: all 0.3s ease;
+}
+::placeholder{
+
+    font-family: 'Alegreya',cursive;
 }
 .res .form .input_field .btn{
 	width: 50%;

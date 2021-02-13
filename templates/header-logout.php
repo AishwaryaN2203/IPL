@@ -16,3 +16,12 @@
         <button type="button" class="btn btn-outline-warning right logout"><a class="header-btn" href="index.php">LOGOUT</a></button>
     </nav> 
 </div>
+<style>
+    .header-btn{
+        width: 350px;
+    height: 50px;
+    text-align: center;
+    border-color: #D5A021;
+    outline-color: #D5A021;
+}
+    </style>

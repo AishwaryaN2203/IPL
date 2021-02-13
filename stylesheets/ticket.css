@@ -1,0 +1,32 @@
+body{
+    
+    background: url(../images/trophy.jfif) no-repeat center fixed;
+    background-size: cover;
+   
+    opacity: 0.9;
+}
+
+.card-title{
+
+font-family: 'Alegreya',cursive;
+font-size: 20px;
+font-weight: bolder;
+}
+h1{
+ text-align:center;
+  font-size: 31px;
+  font-family:  'Cinzel decorative';
+   font-weight: 900;
+   padding-top: 5%;
+}
+.card{
+    background: rgba(0,0,0,0.5);
+    padding: 5%;
+    color: rgb(250, 228, 195);
+    
+}
+.row{
+    padding-top: 5%;
+    padding-bottom: 15%;
+    
+}

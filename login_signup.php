@@ -90,7 +90,7 @@ if(isset($_POST["btn1"])){
 
 <?php include('templates/header.php') ?>
 <?php include('templates/header-ls.php')?>
-
+<link rel="stylesheet" href="stylesheets/login-signup.css">
     <div class="ls-container">
         <div class="form-bx">
         

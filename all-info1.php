@@ -2,7 +2,7 @@
 session_start();
 include_once 'configuration/db-infocon.php';
 
-$html_table = '<table class="center" border="5" cellspacing="2" cellpadding="5">';
+$html_table = '<table class="center1" border="5" cellspacing="2" cellpadding="5">';
 if(isset($_POST['get-details'])){
 
   $info = 1;
@@ -122,20 +122,7 @@ if(isset($_POST['get-details'])){
 <?php include('templates/header.php') ?>
 <?php include('templates/header-logout.php') ?>
 <?php include('templates/user-header.php')?>
-
-<style>
-
-.center {
-  margin-top:50px;
-  width:75%;
-  margin-left: auto; 
-  margin-right: auto;
-}
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-</style>
+<link rel="stylesheet" href="stylesheets/all-info1.css"> 
 
   <form action="" method="post">
     <br><br>
@@ -171,7 +158,7 @@ tr:nth-child(even) {
 
     
     <br><br>
-    <button type="submit" name="get-details"> Go</button> 
+    <button type="submit" name="get-details" style="font-family: 'Cinzel decorative';font-weight: bolder;"> Go </button> 
 
   </form>
 
