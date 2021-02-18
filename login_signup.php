@@ -10,7 +10,7 @@ $email1 = $password1 = "";
 $email_err1 = $password_err1 = $err =  "";
 $email_err2 = $password_err2 = $confirm_password_err = "";
 
-// Processing form data when form is submitted
+// Sign-Up
 if(isset($_POST['btn2'])){
 
     $email2 = trim($_POST['email2']);
@@ -50,6 +50,8 @@ if(isset($_POST['btn2'])){
             echo "Query Error";
     }
 }
+
+// login
 if(isset($_POST["btn1"])){
 
         $email1 = trim($_POST['email1']);

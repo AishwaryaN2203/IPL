@@ -169,7 +169,7 @@ if(isset($_POST['insert'])){
             </div>
         </div>
         
-        <button type="submit" name="insert"> INSERT MATCH DETAILS</button>   
+        <button type="submit" name="insert" id="button1"> INSERT MATCH DETAILS</button>   
         </form>
 </div>
 

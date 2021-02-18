@@ -7,10 +7,10 @@ include_once 'imp/procedure2.php';
 
 $year1 = 2008;
 $year2 = 2019;
-$team = "_%_";
-$player1 ="_%_";
-$player2 = "_%_";
-$extra = "_%_";
+$team = "%";
+$player1 ="%";
+$player2 = "%";
+$extra = "%";
 
 if(isset($_POST['submit1']) || isset($_POST['submit2']) || isset($_POST['submit3']) ){
         if(isset($_POST['season']) && !empty($_POST['season']))
@@ -144,7 +144,7 @@ else if(isset($_POST['submit3'])){
                   ['Bye Runs',<?php echo $row2["ByeRuns"];?>],
                   ['Leg Bye Runs',<?php echo $row2["LegByeRuns"];?> ],
                   ['Runs From No balls',<?php echo $row2["NoBalls"];?>],
-                  ['Total Runs Scored By batsman',<?php echo $row2["ScoredByBatsman"];?>], 
+                  ['Wickets',<?php echo $row2["WICKETS"];?>], 
           ]);
           var options = {
             title: 'BOWLING PERFORMANCE\n Total Wickets:<?php echo $player1?> is <?php echo $row2['WICKETS']?>',
@@ -200,7 +200,7 @@ else if(isset($_POST['submit3'])){
                   ['Bye Runs',<?php echo $row1["ByeRuns"];?>,<?php echo $row2["ByeRuns"];?>],
                   ['Leg Bye Runs',<?php echo $row1["LegByeRuns"];?> ,<?php echo $row2["LegByeRuns"];?> ],
                   ['Runs From No balls',<?php echo $row1["NoBalls"];?>,<?php echo $row2["NoBalls"];?>],
-                  ['Total Runs Scored By batsman',<?php echo $row1["ScoredByBatsman"];?>,<?php echo $row2["ScoredByBatsman"];?>], 
+                  ['Wickets taken',<?php echo $row1["WICKETS"];?>,<?php echo $row2["WICKETS"];?>], 
           ]);
           var options = {
             title : 'Bowling Performance Stats',

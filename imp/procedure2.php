@@ -16,7 +16,7 @@ $sql = "   CREATE PROCEDURE bowling(IN start_y int,IN end_y int,IN bat varchar(1
                 sum(total_runs) AS TotalRunsConceived
                 FROM deliveries JOIN matches  
                 ON deliveries.match_id = matches.id 
-                WHERE batsman LIKE bat AND deliveries.bowling_team LIKE team AND deliveries.bowler LIKE bowler_name AND matches.season BETWEEN start_y AND end_y;
+                WHERE batsman LIKE bat AND deliveries.batting_team LIKE team AND deliveries.bowler LIKE bowler_name AND matches.season BETWEEN start_y AND end_y;
             END;";
 $result = mysqli_query($c,$sql) or die('no2') ; 
 
