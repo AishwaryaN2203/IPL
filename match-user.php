@@ -4,7 +4,7 @@ include('configuration/db-configuration.php');
 include('imp/trigger.php');
 
 
-$sql = "SELECT match_id,team1,team2,stadium_name,stadium_city,date FROM schedule_table,stadium_table WHERE stadium_id=stadium AND finished=1 ";
+$sql = "SELECT match_id,team1,team2,stadium_name,stadium_city,date,timing FROM schedule_table,stadium_table WHERE stadium_id=stadium AND finished=1 ";
 $result  = mysqli_query($conn,$sql);
 $upmatch = mysqli_fetch_all($result,MYSQLI_ASSOC);
 mysqli_free_result($result);
@@ -77,6 +77,7 @@ if(isset($_POST['insert'])){
                             <h5 class="card-title"><?php echo htmlspecialchars($um['stadium_name']); ?></h5>
                             <h6 class="card-subtitle mb-2 text-muted"><?php echo htmlspecialchars($um['stadium_city']); ?></h6>
                             <h5 class="card-title">Date: <?php echo htmlspecialchars($um['date']); ?></h5>
+                            <h5 class="card-title">Date: <?php echo htmlspecialchars($um['timing']); ?></h5>
                         </div>
                     </div>
                     </label>

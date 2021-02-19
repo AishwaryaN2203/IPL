@@ -147,7 +147,7 @@ else if(isset($_POST['submit3'])){
                   ['Wickets',<?php echo $row2["WICKETS"];?>], 
           ]);
           var options = {
-            title: 'BOWLING PERFORMANCE\n Total Wickets:<?php echo $player1?> is <?php echo $row2['WICKETS']?>',
+            title: 'BOWLING PERFORMANCE\n Total Wickets:<?php echo $player1?> is <?php echo $row2['WICKETS']?>\n Total Runs Conceived: <?php echo $row2['TotalRunsConceived']?>\n',
             is3D: true,
           };
           var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
@@ -204,7 +204,7 @@ else if(isset($_POST['submit3'])){
           ]);
           var options = {
             title : 'Bowling Performance Stats',
-            hAxis: {title: 'Total Wickets \n<?php echo $player1?> is <?php echo $row1['WICKETS']?>\n<?php echo $player2?> is <?php echo $row2['WICKETS']?>'},
+            hAxis: {title: 'Total Wickets \n<?php echo $player1?> is <?php echo $row1['WICKETS']?> and Total Runs Conceived: <?php echo $row1['TotalRunsConceived']?>\n<?php echo $player2?> is <?php echo $row2['WICKETS']?> and Total Runs Conceived: <?php echo $row2['TotalRunsConceived']?>'},
             seriesType: 'bars',
             series: {5: {type: 'line'}}
           };
