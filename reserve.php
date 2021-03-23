@@ -121,7 +121,7 @@ if(isset($_POST["submit"])){
 
             <div class="input_field">
                 <label>Match:</label>
-                <input type="text" disabled  value="<?php echo htmlspecialchars($team1)?>" style="color: black;" size="2">      
+                <input type="text" disabled  value="<?php echo htmlspecialchars($team1)?>" style="color: black;" size="2">       
                 VS                   
                 <input type="text" disabled  value="<?php echo htmlspecialchars($team2)?>" style="color: black;" size="2"> 
             </div>
