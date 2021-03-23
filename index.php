@@ -1,7 +1,5 @@
-<?php
-?>
+<?php?>
 <!doctype html>
-
 <?php include('templates/header.php') ?>
 <?php include('templates/header-ls.php')?>
 <html lang="en">
